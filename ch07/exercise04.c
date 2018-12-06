@@ -13,17 +13,20 @@
 int main(void)
 {
 	char ch;
-
+	int substitutions;
+	
 	printf("Enter input (%c to exit):\n", STOP);
 	while ((ch = getchar()) != STOP)
 	{
-		if (ch == '.')
+		if (ch == '.'){
 			printf("!");
-		else if (ch == '!')
+			substitutions++;
+		}else if (ch == '!'){
 			printf("!!");
-		else
+			substitutions++;
+		}else
 			printf("%c", ch);
 	}
-
+	printf("%d substitutions made\n", substitutions);
 	return 0;
 }
